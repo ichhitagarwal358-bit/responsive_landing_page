@@ -1,0 +1,18 @@
+h1{
+    text-align: center;
+    background-color:rgb(36, 171, 156);
+}
+body {
+background-color: rgb(0, 255, 179);
+}
+legend{
+    background-color:rgb(15, 115, 97);
+    color: white;
+    font-size: 15px;
+}
+fieldset{
+    background-color:rgb(9, 153, 117)
+}
+legend{
+    color: rgb(16, 235, 173);
+}

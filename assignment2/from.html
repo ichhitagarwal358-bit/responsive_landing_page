@@ -1,0 +1,114 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intership application form</title>
+    <link rel= "stylesheet" href="./from.css">  
+ </head>
+ <body>
+    <h1>----------intership application from-------</h1>
+    <form>
+    
+        
+        <legend>Student Internship Application. *Required</legend><br><br>
+
+
+        <label for="name">Full Name *</label><br>
+        <input class="input" type="text" id="name" name="name" required placeholder="Eg:ichhit agarwal"><br><br>
+
+        <label for="email">Email *</label><br>
+        <input class="input" type="email" id="email" name="email" required placeholder="Eg: ichhit@example.com"><br><br>
+
+        <label for="password" >Password *</label><br>
+        <input class="input" type="password" id="password" name="password" required placeholder="choose a strong password"><br><br>
+
+        <label for="phone">Phone Number *</label><br>
+        <input class="input" type="tel" id="phone" name="phone" required placeholder="Eg: 987xxxxxx"><br><br>
+
+        <label for="portfolio_url">Portfolio URL</label><br>
+        <input class="input" type="url" id="portfolio_url" name="portfolio_url" placeholder="Eg: https://ichhit.com/portfolio"><br><br>
+
+        <label for="age">Age *</label><br> <br>
+        <input class="input" type="number" id="age" name="age" required placeholder="Eg: 18+" min="0"><br><br>
+
+
+        <label for="gender">Gender *</label><br>
+        <input type="radio" id="male" name="gender" value="male" required>
+
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female" required>
+
+        <label for="female">Female</label>
+        <input type="radio" id="other" name="gender" value="other" required>
+
+        <label for="other">Other/Prefer not to say</label><br><br><br><br>
+
+        <fieldset>
+            <legend>EDUCATION</legend><br><br>
+
+            <label for="Course" >Course *</label><br>
+            <select class="input" id="Course" name="Course" required>
+                <option value="">Select Course</option>
+                <option value="btechCSE">B.Tech Computer Science & Engineering</option>
+                <option value="btechEE">B.Tech Electrical Engineering</option>
+                <option value="btechME">B.Tech Mechanical Engineering</option>
+                <option value="other">Other</option>
+
+
+            </select><br><br>
+            <label for="prefCity" >Preferred City </label><br>
+            <select class="input" id="prefCity" name="prefCity">
+                <option value="">Select City</option>
+                <option value="bareilly">Bareilly</option>
+                <option value="delhi">Delhi</option>
+                <option value="mumbai">Mumbai</option>
+                <option value="bangalore">Bangalore</option>
+                <option value="other">Other</option>
+            </select><br><br>
+
+
+            <label for="skills">Skills:</label>
+            <input type="checkbox" id="html" name="skills" value="html">
+
+            <label for="html">HTML</label>
+            <input type="checkbox" id="css" name="skills" value="css">
+
+            <label for="css">CSS</label>
+            <input type="checkbox" id="javascript" name="skills" value="javascript">
+
+            <label for="javascript">JavaScript</label><br><br>
+
+            <h3>Upload And Extras</h3>
+
+            <label for="date">Avalible from</label>
+            <input class="input" type="date" id="date" name="date"><br><br>
+
+            <label for="time">Interview Time</label>
+            <input class="input" type="time" id="time" name="time"><br><br>
+
+            <label for="resume">Resume*</label><br>
+            <input class="input" type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required><br><br>
+
+            <label for="stipend">Expected Monthly Stipend *:  <span id="stipend-value"></span></label><br>
+            <input class="input" type="range" id="stipend" name="stipend" required min="0" max="100000" step="1000" value="10000"
+             oninput="document.getElementById('stipend-value').innerText = '₹' + Number(this.value).toLocaleString('en-IN')"><br><br>
+
+             <label for="colour">Favourite Colour</label>
+             <input  type="color" id="colour" name="colour"><br><br>
+
+             <label for="Reason">Why do you want to join us? *</label><br>
+             <textarea class="input" id="Reason" name="Reason" required rows="4" cols="100" minlength="50" maxlength="500"></textarea><br><br>
+
+             <input class="input1" type="submit" value="Submit">
+             <input class="input1" type="reset" value="Reset Form">
+
+        </fieldset>
+
+    </fieldset>
+    </form>
+</body>
+</html>
+    
+ </body>
+ </html>
