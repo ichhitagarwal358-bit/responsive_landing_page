@@ -1,0 +1,624 @@
+/* ========================================
+   CSS DESIGN TOKENS & VARIABLES
+   ======================================== */
+
+:root {
+    /* Color Palette */
+    --primary-color: #2d3748;        /* Dark Navy - Professional & Modern */
+    --secondary-color: #4a5568;      /* Medium Gray - Supporting Text */
+    --accent-color: #667eea;         /* Soft Purple - Call-to-action */
+    --accent-hover: #5a67d8;         /* Darker Purple - Hover State */
+    --bg-color: #f7fafc;             /* Light Gray - Background */
+    --white: #ffffff;                /* Pure White */
+    
+    /* Font Sizes */
+    --font-xl: 3.5rem;               /* Extra large - Hero titles */
+    --font-lg: 2.5rem;               /* Large - Section titles */
+    --font-md: 1.5rem;               /* Medium - Subheadings */
+    --font-base: 1rem;               /* Base - Body text */
+    --font-sm: 0.875rem;             /* Small - Tags & captions */
+    
+    /* Spacing System */
+    --spacing-xs: 0.5rem;            /* 8px */
+    --spacing-sm: 1rem;              /* 16px */
+    --spacing-md: 2rem;              /* 32px */
+    --spacing-lg: 4rem;              /* 64px */
+    --spacing-xl: 6rem;              /* 96px */
+    
+    /* Other Design Tokens */
+    --border-radius: 8px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+
+/* ========================================
+   RESET & BASE STYLES
+   ======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Element Selector */
+body {
+    font-family: 'Inter', sans-serif;  /* Body Font - Clean & Readable */
+    font-size: var(--font-base);
+    line-height: 1.6;
+    color: var(--secondary-color);
+    background-color: var(--bg-color);
+}
+
+/* Element Selector */
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;  /* Heading Font - Elegant & Classic */
+    color: var(--primary-color);
+    line-height: 1.2;
+}
+
+/* Element Selector */
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+/* Element Selector */
+ul {
+    list-style: none;
+}
+
+/* Element Selector */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* ========================================
+   REUSABLE CLASSES
+   ======================================== */
+
+/* Class Selector */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+/* Class Selector */
+.section-title {
+    font-size: var(--font-lg);
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    position: relative;
+}
+
+/* Pseudo-class Selector */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--accent-color);
+    margin: var(--spacing-sm) auto 0;
+    border-radius: 2px;
+}
+
+
+/* ========================================
+   HEADER & NAVIGATION
+   ======================================== */
+
+/* ID Selector */
+#main-header {
+    background: var(--white);
+    box-shadow: var(--box-shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: var(--spacing-sm) 0;
+}
+
+/* Descendant Selector */
+#main-header .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+/* Class Selector */
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: var(--font-md);
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* Descendant Selector */
+.nav-menu {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+/* Child Selector */
+.nav-menu > li {
+    position: relative;
+}
+
+/* Class Selector with Pseudo-class */
+.nav-link {
+    color: var(--secondary-color);
+    font-weight: 500;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius);
+}
+
+/* Pseudo-class Selector - Hover Effect */
+.nav-link:hover {
+    color: var(--accent-color);
+    background: rgba(102, 126, 234, 0.1);
+}
+
+
+/* ========================================
+   HERO SECTION
+   ======================================== */
+
+/* Class Selector */
+.hero-section {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: var(--spacing-xl) var(--spacing-md);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: var(--white);
+}
+
+/* Descendant Selector */
+.hero-section .hero-subtitle {
+    font-size: var(--font-md);
+    margin-bottom: var(--spacing-xs);
+    opacity: 0.9;
+}
+
+/* Class Selector */
+.hero-title {
+    font-size: var(--font-xl);
+    margin-bottom: var(--spacing-sm);
+    font-weight: 700;
+}
+
+/* Class Selector */
+.hero-description {
+    font-size: var(--font-md);
+    margin-bottom: var(--spacing-md);
+    opacity: 0.95;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Class Selector */
+.hero-buttons {
+    display: flex;
+    gap: var(--spacing-sm);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+/* ========================================
+   BUTTONS
+   ======================================== */
+
+/* Class Selector */
+.btn-primary {
+    background: var(--white);
+    color: var(--accent-color);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    display: inline-block;
+    transition: var(--transition);
+}
+
+/* Pseudo-class Selector - Hover Effect */
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Class Selector */
+.btn-secondary {
+    background: transparent;
+    color: var(--white);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 2px solid var(--white);
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    display: inline-block;
+    transition: var(--transition);
+}
+
+/* Pseudo-class Selector - Hover Effect */
+.btn-secondary:hover {
+    background: var(--white);
+    color: var(--accent-color);
+}
+
+
+/* ========================================
+   ABOUT SECTION
+   ======================================== */
+
+/* Class Selector */
+.about-section {
+    padding: var(--spacing-xl) 0;
+    background: var(--white);
+}
+
+/* Descendant Selector */
+.about-section .about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+    align-items: center;
+}
+
+/* Descendant Selector with Element */
+.about-text p {
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.8;
+}
+
+/* Class Selector */
+.about-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+}
+
+/* Class Selector */
+.stat-item {
+    text-align: center;
+    padding: var(--spacing-md);
+    background: var(--bg-color);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+/* Pseudo-class Selector - Hover Effect */
+.stat-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--box-shadow);
+}
+
+/* Descendant Selector with Element */
+.stat-item h3 {
+    font-size: var(--font-lg);
+    color: var(--accent-color);
+    margin-bottom: var(--spacing-xs);
+}
+
+
+/* ========================================
+   PROJECTS SECTION
+   ======================================== */
+
+/* Class Selector */
+.projects-section {
+    padding: var(--spacing-xl) 0;
+    background: var(--bg-color);
+}
+
+/* Class Selector */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+}
+
+/* Class Selector */
+.project-card {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+/* Pseudo-class Selector - Hover Effect */
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Class Selector */
+.project-image {
+    height: 200px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Class Selector */
+.project-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+/* Pseudo-class Selector - Hover Effect */
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+/* Class Selector */
+.project-link {
+    color: var(--white);
+    font-weight: 600;
+    padding: var(--spacing-xs) var(--spacing-md);
+    border: 2px solid var(--white);
+    border-radius: var(--border-radius);
+}
+
+/* Pseudo-class Selector - Hover Effect */
+.project-link:hover {
+    background: var(--white);
+    color: var(--accent-color);
+}
+
+/* Class Selector */
+.project-info {
+    padding: var(--spacing-md);
+}
+
+/* Descendant Selector with Element */
+.project-info h3 {
+    font-size: var(--font-md);
+    margin-bottom: var(--spacing-xs);
+}
+
+/* Descendant Selector with Element */
+.project-info p {
+    margin-bottom: var(--spacing-sm);
+    color: var(--secondary-color);
+}
+
+/* Class Selector */
+.project-tags {
+    display: flex;
+    gap: var(--spacing-xs);
+    flex-wrap: wrap;
+}
+
+/* Descendant Selector with Element */
+.project-tags span {
+    background: var(--bg-color);
+    color: var(--accent-color);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: var(--font-sm);
+    font-weight: 500;
+}
+
+
+/* ========================================
+   SKILLS SECTION
+   ======================================== */
+
+/* Class Selector */
+.skills-section {
+    padding: var(--spacing-xl) 0;
+    background: var(--white);
+}
+
+/* Class Selector */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+}
+
+/* Class Selector */
+.skill-category {
+    padding: var(--spacing-md);
+    background: var(--bg-color);
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--accent-color);
+    transition: var(--transition);
+}
+
+/* Pseudo-class Selector - Hover Effect */
+.skill-category:hover {
+    transform: translateX(10px);
+    box-shadow: var(--box-shadow);
+}
+
+/* Descendant Selector with Element */
+.skill-category h3 {
+    margin-bottom: var(--spacing-sm);
+    color: var(--accent-color);
+}
+
+/* Descendant Selector with Element */
+.skill-category li {
+    padding: var(--spacing-xs) 0;
+    color: var(--secondary-color);
+}
+
+
+/* ========================================
+   CONTACT SECTION
+   ======================================== */
+
+/* Class Selector */
+.contact-section {
+    padding: var(--spacing-xl) 0;
+    background: var(--bg-color);
+}
+
+/* Class Selector */
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+}
+
+/* Descendant Selector with Element */
+.contact-info h3 {
+    font-size: var(--font-md);
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Descendant Selector with Element */
+.contact-info p {
+    margin-bottom: var(--spacing-md);
+    line-height: 1.8;
+}
+
+/* Class Selector */
+.contact-details {
+    margin-top: var(--spacing-md);
+}
+
+/* Class Selector */
+.contact-item {
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Descendant Selector with Element */
+.contact-item strong {
+    display: block;
+    color: var(--primary-color);
+    margin-bottom: 4px;
+}
+
+/* Descendant Selector with Element */
+.contact-item a {
+    color: var(--accent-color);
+}
+
+/* Pseudo-class Selector - Hover Effect */
+.contact-item a:hover {
+    text-decoration: underline;
+}
+
+/* Class Selector */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+/* Descendant Selector with Element */
+.contact-form input,
+.contact-form textarea {
+    padding: var(--spacing-sm);
+    border: 1px solid #e2e8f0;
+    border-radius: var(--border-radius);
+    font-family: inherit;
+    font-size: var(--font-base);
+    transition: var(--transition);
+}
+
+/* Pseudo-class Selector - Focus Effect */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Descendant Selector with Element */
+.contact-form button {
+    align-self: flex-start;
+    cursor: pointer;
+    border: none;
+}
+
+
+/* ========================================
+   FOOTER
+   ======================================== */
+
+/* ID Selector */
+#main-footer {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: var(--spacing-md) 0;
+}
+
+/* Descendant Selector */
+#main-footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Class Selector */
+.social-links {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+/* Descendant Selector with Element */
+.social-links a {
+    color: var(--white);
+    transition: var(--transition);
+}
+
+/* Pseudo-class Selector - Hover Effect */
+.social-links a:hover {
+    color: var(--accent-color);
+}
+
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 768px) {
+    :root {
+        --font-xl: 2.5rem;
+        --font-lg: 2rem;
+        --spacing-xl: 3rem;
+    }
+    
+    .nav-menu {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .about-content,
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    #main-footer .container {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        text-align: center;
+    }
+}

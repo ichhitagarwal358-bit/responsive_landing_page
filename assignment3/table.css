@@ -1,0 +1,205 @@
+/* CSS Variables */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --bg-color: #ecf0f1;
+    --text-color: #2c3e50;
+    --border-color: #bdc3c7;
+    --hover-color: #f39c12;
+    --break-color: #ffe5b4;
+    --lunch-color: #ffcccc;
+    
+    --table-padding: 12px;
+    --border-radius: 8px;
+    --font-size-base: 14px;
+    --font-size-heading: 16px;
+    --spacing-small: 10px;
+    --spacing-medium: 20px;
+    --spacing-large: 40px;
+}
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: var(--spacing-medium);
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background: white;
+    padding: var(--spacing-large);
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+
+h1 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-small);
+    font-size: 2.2rem;
+}
+
+h2 {
+    text-align: center;
+    color: var(--secondary-color);
+    margin-bottom: var(--spacing-large);
+    font-size: 1.3rem;
+    font-weight: normal;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: var(--spacing-large);
+    font-size: var(--font-size-base);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+caption {
+    caption-side: top;
+    padding: var(--spacing-medium);
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    background: var(--bg-color);
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+/* Table Head */
+thead {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+}
+
+thead th {
+    padding: var(--table-padding);
+    text-align: center;
+    font-weight: bold;
+    font-size: var(--font-size-heading);
+    border: 1px solid var(--border-color);
+}
+
+/* Table Body */
+tbody tr {
+    transition: all 0.3s ease;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+tbody tr:hover {
+    background-color: var(--hover-color);
+    color: white;
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+tbody th {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: var(--table-padding);
+    text-align: left;
+    font-weight: bold;
+    border: 1px solid var(--border-color);
+    min-width: 120px;
+}
+
+tbody td {
+    padding: var(--table-padding);
+    text-align: center;
+    border: 1px solid var(--border-color);
+}
+
+/* Special Rows */
+.break {
+    background-color: var(--break-color) !important;
+    font-weight: bold;
+    color: var(--accent-color);
+    text-align: center;
+}
+
+.lunch {
+    background-color: var(--lunch-color) !important;
+    font-weight: bold;
+    color: var(--accent-color);
+    text-align: center;
+}
+
+/* Table Footer */
+tfoot {
+    background: linear-gradient(135deg, #34495e, #2c3e50);
+    color: white;
+    font-weight: bold;
+}
+
+tfoot th,
+tfoot td {
+    padding: var(--table-padding);
+    text-align: center;
+    border: 1px solid var(--border-color);
+    font-size: var(--font-size-heading);
+}
+
+/* Info Box */
+.info-box {
+    background: var(--bg-color);
+    padding: var(--spacing-medium);
+    border-radius: var(--border-radius);
+    border-left: 5px solid var(--secondary-color);
+}
+
+.info-box h3 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-small);
+}
+
+.info-box ul {
+    margin-left: 20px;
+    line-height: 1.8;
+}
+
+.info-box li {
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    table {
+        font-size: 12px;
+    }
+    
+    :root {
+        --table-padding: 8px;
+        --font-size-base: 12px;
+        --font-size-heading: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: var(--spacing-medium);
+    }
+    
+    table {
+        font-size: 10px;
+    }
+    
+    :root {
+        --table-padding: 6px;
+    }
+}
