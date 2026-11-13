@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto-fit Product Grid - CSS Grid</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+        }
+
+        /* Auto-fit Grid using repeat(auto-fit, minmax()) */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 25px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            margin-bottom: 15px;
+        }
+
+        .product-card h3 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .product-card p {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price {
+            color: #667eea;
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+
+        .add-btn {
+            background: #667eea;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .add-btn:hover {
+            background: #5568d3;
+        }
+
+        .rating {
+            color: #ffa500;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Product Store - Auto-fit Grid</h1>
+
+    <!-- Auto-fit Grid - Automatically adjusts columns -->
+    <div class="product-grid">
+        <div class="product-card">
+            <div class="product-image">💻</div>
+            <div class="rating">⭐⭐⭐⭐⭐</div>
+            <h3>Gaming Laptop</h3>
+            <p>High performance laptop for gaming and work</p>
+            <div class="product-footer">
+                <span class="price">₹65,999</span>
+                <button class="add-btn">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">📱</div>
+            <div class="rating">⭐⭐⭐⭐</div>
+            <h3>Smartphone Pro</h3>
+            <p>Latest 5G smartphone with AI camera</p>
+            <div class="product-footer">
+                <span class="price">₹29,999</span>
+                <button class="add-btn">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">🎧</div>
+            <div class="rating">⭐⭐⭐⭐⭐</div>
+            <h3>Wireless Earbuds</h3>
+            <p>Premium sound with active noise cancellation</p>
+            <div class="product-footer">
+                <span class="price">₹4,999</span>
+                <button class="add-btn">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">⌚</div>
+            <div class="rating">⭐⭐⭐⭐</div>
+            <h3>Smart Watch Ultra</h3>
+            <p>Track fitness, health and stay connected</p>
+            <div class="product-footer">
+                <span class="price">₹12,999</span>
+                <button class="add-btn">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">📷</div>
+            <div class="rating">⭐⭐⭐⭐⭐</div>
+            <h3>DSLR Camera</h3>
+            <p>Professional camera with 24MP sensor</p>
+            <div class="product-footer">
+                <span class="price">₹45,999</span>
+                <button class="add-btn">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">🖥️</div>
+            <div class="rating">⭐⭐⭐⭐</div>
+            <h3>4K Monitor</h3>
+            <p>Ultra HD display with HDR support</p>
+            <div class="product-footer">
+                <span class="price">₹24,999</span>
+                <button class="add-btn">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">⌨️</div>
+            <div class="rating">⭐⭐⭐⭐</div>
+            <h3>Mechanical Keyboard</h3>
+            <p>RGB backlit gaming keyboard</p>
+            <div class="product-footer">
+                <span class="price">₹5,999</span>
+                <button class="add-btn">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">🖱️</div>
+            <div class="rating">⭐⭐⭐⭐⭐</div>
+            <h3>Gaming Mouse</h3>
+            <p>Wireless mouse with programmable buttons</p>
+            <div class="product-footer">
+                <span class="price">₹2,999</span>
+                <button class="add-btn">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">🎮</div>
+            <div class="rating">⭐⭐⭐⭐⭐</div>
+            <h3>Gaming Console</h3>
+            <p>Next-gen gaming with 4K graphics</p>
+            <div class="product-footer">
+                <span class="price">₹49,999</span>
+                <button class="add-btn">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">🔊</div>
+            <div class="rating">⭐⭐⭐⭐</div>
+            <h3>Bluetooth Speaker</h3>
+            <p>Portable speaker with deep bass</p>
+            <div class="product-footer">
+                <span class="price">₹3,499</span>
+                <button class="add-btn">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">💾</div>
+            <div class="rating">⭐⭐⭐⭐</div>
+            <h3>External SSD 1TB</h3>
+            <p>Fast storage for all your files</p>
+            <div class="product-footer">
+                <span class="price">₹8,999</span>
+                <button class="add-btn">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">🎥</div>
+            <div class="rating">⭐⭐⭐⭐⭐</div>
+            <h3>Action Camera</h3>
+            <p>Waterproof 4K action camera</p>
+            <div class="product-footer">
+                <span class="price">₹18,999</span>
+                <button class="add-btn">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
