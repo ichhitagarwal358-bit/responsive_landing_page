@@ -1,2 +1,5 @@
-# HTML all assignment
-Build a fully responsive landing page using both grid and flex box in the right places.
+# HTML & CSS Assignment 
+About the Project-
+This repository contains my html and css assignment completed as part of my B.tech cse coursework at inverties university.
+
+
